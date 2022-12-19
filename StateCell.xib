@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="StateCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="StateCell" rowHeight="46" id="r9k-Rb-O4V" customClass="StateCell" customModule="LicensePlateGame" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="420" height="46"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r9k-Rb-O4V" id="4s8-1M-blw">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="45.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H82-RC-fwR">
+                        <rect key="frame" x="373" y="10" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="9GG-WZ-5KH"/>
+                            <constraint firstAttribute="height" constant="25" id="lTY-6y-1Mb"/>
+                        </constraints>
+                        <connections>
+                            <action selector="stateDetails:" destination="r9k-Rb-O4V" eventType="touchUpInside" id="Ofy-0M-ZCj"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="California" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQN-cQ-dOm">
+                        <rect key="frame" x="62" y="8" width="303" height="26"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check-mark" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-fO-aLz">
+                        <rect key="frame" x="23" y="8" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="gzc-1D-bhN"/>
+                            <constraint firstAttribute="height" constant="25" id="jTC-JE-aaR"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KXp-fO-aLz" firstAttribute="leading" secondItem="4s8-1M-blw" secondAttribute="leadingMargin" constant="15" id="3W5-r0-swT"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="H82-RC-fwR" secondAttribute="bottom" constant="2.5" id="8D4-Rg-Zro"/>
+                    <constraint firstItem="KXp-fO-aLz" firstAttribute="top" secondItem="4s8-1M-blw" secondAttribute="topMargin" id="9PF-ow-THj"/>
+                    <constraint firstItem="oQN-cQ-dOm" firstAttribute="top" secondItem="4s8-1M-blw" secondAttribute="topMargin" id="FB1-5I-A85"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="KXp-fO-aLz" secondAttribute="bottom" constant="4.5" id="SXW-El-qkE"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="oQN-cQ-dOm" secondAttribute="bottom" constant="3.1699999999999999" id="Vm1-cn-l8T"/>
+                    <constraint firstItem="oQN-cQ-dOm" firstAttribute="leading" secondItem="KXp-fO-aLz" secondAttribute="trailing" constant="14" id="Wms-GA-JLq"/>
+                    <constraint firstItem="H82-RC-fwR" firstAttribute="top" secondItem="4s8-1M-blw" secondAttribute="topMargin" constant="2" id="cqh-Zs-Nsb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="H82-RC-fwR" secondAttribute="trailing" constant="14" id="f5J-OC-dmc"/>
+                    <constraint firstItem="H82-RC-fwR" firstAttribute="leading" secondItem="oQN-cQ-dOm" secondAttribute="trailing" constant="8" id="vsq-13-EHs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btnDetail" destination="H82-RC-fwR" id="gbb-rT-LmV"/>
+                <outlet property="checkmarkImage" destination="KXp-fO-aLz" id="yoJ-2Z-AfA"/>
+                <outlet property="stateName" destination="oQN-cQ-dOm" id="IOM-xM-nej"/>
+            </connections>
+            <point key="canvasLocation" x="58" y="-94"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="check-mark" width="733" height="720"/>
+    </resources>
+</document>

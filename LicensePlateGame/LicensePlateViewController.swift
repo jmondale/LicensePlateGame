@@ -56,7 +56,7 @@ class LicensePlateViewController: UITableViewController, UIPopoverControllerDele
         cell.delegate = self
         cell.indexPath = indexPath
         
-        
+        tableView.backgroundColor = UIColor.black
         
         configureCheckmarkForCell(cell, withLicensePlateItem: item)
         return cell

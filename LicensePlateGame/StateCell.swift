@@ -27,17 +27,8 @@ class StateCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configure(for state: LicensePlateItem) {
-        //self.backgroundColor = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
-        //self.backgroundColor = UIColor(red: 234/255, green: 230/255, blue: 0/255, alpha: 1.0)
-        //self.backgroundColor = UIColor(red: 249/255, green: 247/255, blue: 87/255, alpha: 1.0) 
         stateName.text = state.stateName
     }
 

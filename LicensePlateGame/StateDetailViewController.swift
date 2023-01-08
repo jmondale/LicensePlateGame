@@ -38,5 +38,7 @@ class StateDetailViewController: UIViewController {
             let image = UIImage(named:stateFlagName)
             self.stateFlagImage.image = image
         }
+        
+        view.backgroundColor = .lightGray
     }
 }

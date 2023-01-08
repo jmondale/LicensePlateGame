@@ -515,5 +515,15 @@ class States {
         state50.checked = false
         state50.stateFlagImageName = "wyoming"
         items.append(state50)
+        
+        let state51 = LicensePlateItem()
+        state51.stateName = "Washington, D.C."
+        state51.stateCapital = "Nations Capital"
+        state51.yearEstablished = "July 10, 1890"
+        state51.yearSettled = "1834"
+        state51.stateOrder = "44"
+        state51.checked = false
+        state51.stateFlagImageName = "districtofcolumbia"
+        items.append(state51)
     }
 }

@@ -9,7 +9,8 @@
 import Foundation
 
 class DataModel {
-    var states = [LicensePlateItem]()
+    //var states = [LicensePlateItem]()
+    var states = States()?.items
     var firstTimeToPlay = true
     
     init() {
@@ -38,7 +39,7 @@ class DataModel {
         if FileManager.default.fileExists(atPath: path) {
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
                 let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-                states = unarchiver.decodeObject(forKey: "LicensePlateItems") as! [LicensePlateItem]
+                states = unarchiver.decodeObject(forKey: "LicensePlateItems") as? [LicensePlateItem]
                 unarchiver.finishDecoding()
             }
         }

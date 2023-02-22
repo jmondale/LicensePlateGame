@@ -8,9 +8,13 @@
 
 import Foundation
 
-class States {
+class States: Codable {
     
     var items: [LicensePlateItem]
+    
+    enum CodingKeys: String, CodingKey {
+      case items
+    }
     
     required init?() {
         

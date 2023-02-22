@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class LicensePlateItem: NSObject, NSCoding{
+class LicensePlateItem: NSObject, NSCoding, Codable {
     var stateName = ""
-    var stateFlagImage:UIImage?
+    var stateFlagImage: UIImage?
     var checked = false
     var stateCapital = ""
     var stateFlag = ""
@@ -19,6 +19,17 @@ class LicensePlateItem: NSObject, NSCoding{
     var yearSettled = ""
     var stateOrder = ""
     var stateFlagImageName = ""
+    
+    enum CodingKeys: String, CodingKey {
+        case stateName
+        case checked
+        case stateCapital
+        case stateFlag
+        case yearEstablished
+        case yearSettled
+        case stateOrder
+        case stateFlagImageName
+    }
     
     required init?(coder aDecoder: NSCoder) {
         stateName = aDecoder.decodeObject(forKey: "StateName") as? String ?? ""
@@ -32,7 +43,8 @@ class LicensePlateItem: NSObject, NSCoding{
         super.init()
     }
     
-    override init() { super.init()
+    override init() {
+        super.init()
     }
     
     func toggleChecked() {

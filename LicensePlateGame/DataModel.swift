@@ -8,10 +8,14 @@
 
 import Foundation
 
-class DataModel {
-    //var states = [LicensePlateItem]()
+class DataModel: Codable  {
     var states = States()?.items
     var firstTimeToPlay = true
+    
+    enum CodingKeys: String, CodingKey {
+      case states
+      case firstTimeToPlay
+    }
     
     init() {
         loadLicensePlateItems()
@@ -27,20 +31,25 @@ class DataModel {
     }
     
     func saveLicensePlateItem() {
-        let data = NSMutableData()
-        let archiver = NSKeyedArchiver(forWritingWith: data)
-        archiver.encode(states, forKey: "LicensePlateItems")
-        archiver.finishEncoding()
-        data.write(toFile: dataFilePath(), atomically: true)
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(states)
+            UserDefaults.standard.set(data, forKey: "LicensePlateItems")
+
+        } catch {
+            print("Unable to Encode Note (\(error))")
+        }
     }
     
     func loadLicensePlateItems() {
-        let path = dataFilePath()
-        if FileManager.default.fileExists(atPath: path) {
-            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
-                let unarchiver = NSKeyedUnarchiver(forReadingWith: data)
-                states = unarchiver.decodeObject(forKey: "LicensePlateItems") as? [LicensePlateItem]
-                unarchiver.finishDecoding()
+        if let data = UserDefaults.standard.data(forKey: "LicensePlateItems") {
+            do {
+                let decoder = JSONDecoder()
+                
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                states = try decoder.decode([LicensePlateItem].self, from: data)
+            } catch {
+                print("Unable to Decode Note (\(error))")
             }
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4C6A60D297723FD00FB84FE /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C6A60B297723FC00FB84FE /* ScoreCell.swift */; };
+		E4C6A60E297723FD00FB84FE /* ScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C6A60C297723FC00FB84FE /* ScoreCell.xib */; };
 		E4CB234A1C9236DD00130604 /* StateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CB23491C9236DD00130604 /* StateDetailViewController.swift */; };
 		E4F35FB91DFF0686009E51E3 /* StateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4F35FB81DFF0686009E51E3 /* StateCell.xib */; };
 		E4F35FBB1DFF087B009E51E3 /* StateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F35FBA1DFF087B009E51E3 /* StateCell.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4C6A60B297723FC00FB84FE /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
+		E4C6A60C297723FC00FB84FE /* ScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreCell.xib; sourceTree = "<group>"; };
 		E4CB23491C9236DD00130604 /* StateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDetailViewController.swift; sourceTree = "<group>"; };
 		E4F35FB81DFF0686009E51E3 /* StateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StateCell.xib; sourceTree = "<group>"; };
 		E4F35FBA1DFF087B009E51E3 /* StateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateCell.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 				E4F960991C765A76008C5A1A /* LicensePlateViewController.swift */,
 				E4F35FB81DFF0686009E51E3 /* StateCell.xib */,
 				E4F35FBA1DFF087B009E51E3 /* StateCell.swift */,
+				E4C6A60B297723FC00FB84FE /* ScoreCell.swift */,
+				E4C6A60C297723FC00FB84FE /* ScoreCell.xib */,
 				E4F9609B1C765A76008C5A1A /* Main.storyboard */,
 				E4CB23491C9236DD00130604 /* StateDetailViewController.swift */,
 				E4F960A31C765A76008C5A1A /* Info.plist */,
@@ -143,6 +149,7 @@
 			files = (
 				E4F9609F1C765A76008C5A1A /* Assets.xcassets in Resources */,
 				E4F35FB91DFF0686009E51E3 /* StateCell.xib in Resources */,
+				E4C6A60E297723FD00FB84FE /* ScoreCell.xib in Resources */,
 				E4F9609D1C765A76008C5A1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +167,7 @@
 				E4F960AA1C765C7D008C5A1A /* LicensePlateItem.swift in Sources */,
 				E4F960AC1C765CAE008C5A1A /* States.swift in Sources */,
 				E4CB234A1C9236DD00130604 /* StateDetailViewController.swift in Sources */,
+				E4C6A60D297723FD00FB84FE /* ScoreCell.swift in Sources */,
 				E4F35FBB1DFF087B009E51E3 /* StateCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Combine
+import SwiftUI
 
 class LicensePlateViewController: UITableViewController, UIPopoverControllerDelegate, StateCellDelegate {
 
     var dataModel: DataModel?
     var state: States
     var statesFoundCount: Int = 0
+    var totalStates: Int = 0
+    var scoreCell = ScoreCell()
     
     required init?(coder aDecoder: NSCoder) {
         state = States()!
@@ -35,6 +39,11 @@ class LicensePlateViewController: UITableViewController, UIPopoverControllerDele
         
         let stateCell = UINib(nibName: "StateCell", bundle: nil)
         tableView.register(stateCell, forCellReuseIdentifier: "StateCell")
+        
+        if let states = dataModel?.states {
+            statesFoundCount = states.filter{$0.checked == true}.count
+            totalStates = states.count
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +64,10 @@ class LicensePlateViewController: UITableViewController, UIPopoverControllerDele
             cell.layer.borderWidth = 1
             cell.layer.cornerRadius = 8
             cell.clipsToBounds = true
-            return cell
+            cell.totalStates.text = String(totalStates)
+            cell.scoreTotal.text = String(statesFoundCount)
+            scoreCell = cell
+            return scoreCell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "StateCell", for: indexPath) as! StateCell
             // add border and color
@@ -76,28 +88,21 @@ class LicensePlateViewController: UITableViewController, UIPopoverControllerDele
                 return cell
             }
         }
+        
         return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath) {
             UserDefaults.standard.set((indexPath as NSIndexPath).row, forKey: "LicensePlateIndex")
             if let item = dataModel?.states?[(indexPath as NSIndexPath).row] {
                 item.toggleChecked()
                 configureCheckmarkForCell(cell, withLicensePlateItem: item)
-                if let states = dataModel?.states {
-                    for state in states {
-                        if state.checked {
-                            statesFoundCount += 1
-                            print(statesFoundCount)
-                            print(state.stateName)
-                        }
-                    }
-                }
+                scoreCell.scoreTotal.text = String(dataModel?.states?.filter{$0.checked == true}.count ?? 0)
             }
         }
         
-        tableView.deselectRow(at: indexPath, animated: true)
         dataModel?.saveLicensePlateItem()
     }
     

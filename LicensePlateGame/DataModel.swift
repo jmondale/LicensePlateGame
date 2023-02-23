@@ -45,7 +45,6 @@ class DataModel: Codable  {
         if let data = UserDefaults.standard.data(forKey: "LicensePlateItems") {
             do {
                 let decoder = JSONDecoder()
-                
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 states = try decoder.decode([LicensePlateItem].self, from: data)
             } catch {

@@ -94,6 +94,7 @@ class LicensePlateViewController: UITableViewController, UIPopoverControllerDele
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        // test
         if let cell = tableView.cellForRow(at: indexPath) {
             UserDefaults.standard.set((indexPath as NSIndexPath).row, forKey: "LicensePlateIndex")
             if let item = dataModel?.states?[(indexPath as NSIndexPath).row] {
